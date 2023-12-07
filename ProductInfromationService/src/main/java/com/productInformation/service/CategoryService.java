@@ -2,12 +2,18 @@ package com.productInformation.service;
 
 import java.util.List;
 
+import com.productInformation.dto.CategoryRequest;
+import com.productInformation.dto.CategoryResponse;
 import com.productInformation.model.Category;
 
 public interface CategoryService {
 
-	List<Category> getCategory();
+	List<CategoryResponse> processCategory();
 	
-	Category saveSKUCategory(Category product);
+	List<CategoryResponse> processCategoryid(int ID);
+	
+	int processByID(int id);
+
+	Category processSKUCategory(Category pCategory, CategoryRequest cRequest, ProductService pService);
 	
 }

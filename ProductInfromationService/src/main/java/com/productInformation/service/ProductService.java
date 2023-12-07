@@ -2,14 +2,15 @@ package com.productInformation.service;
 
 import java.util.List;
 
+import com.productInformation.dto.ProductResponse;
 import com.productInformation.model.Product;
 
 public interface ProductService {
 
 
-	List<Product> getCategory();
+	public List<ProductResponse> processProduct(ProductServiceImplementation pService);
 	
-	Product saveSKUName(Product productName);
+	List<Product> processSKUName(List<Product> productName);
 	
 
 }

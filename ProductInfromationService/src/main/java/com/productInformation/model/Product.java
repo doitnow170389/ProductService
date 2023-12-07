@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.productInformation.dto.ProductRequest;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,13 +24,18 @@ import lombok.ToString;
 public class Product {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	int pid;
+	private int pid;
 	
-	String SKUName;
+	private String skuname;
 	
-	String SKUURL;
+	private String skuurl;
 //	
-//	@ManyToOne
-//	@JoinColumn(name="skucategory_ID")
-//	ProductCategory ProductCategory;
+	@ManyToOne
+	@JoinColumn(name="skucategoryid")
+	Category ProductCategory;
+	
+//	public Product(ProductRequest prequest) {
+//		this.skuname=prequest.getSkuname();
+//		this.skuurl=prequest.getSkuurl();
+//	}
 }

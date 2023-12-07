@@ -11,12 +11,10 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryRequest {
+public class ProductRequest {
 
-	String categoryname;
-	String categorytype;
-	List<ProductRequest> productinformation;
-	
+	String skuname;
+	String skuurl;
 //	Category pCategory;
 	 
 	

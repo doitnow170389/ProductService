@@ -1,5 +1,6 @@
 package com.productInformation.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -31,19 +32,19 @@ public class Category {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	int SKUCategory_ID;
+	private int skucategoryid;
 	
-	String SKUCategory_Name;
+	private String skucategoryname;
 	
-	String SKUCategory_Type;
+	private String skucategorytype;
 	
 	
 	@OneToMany(targetEntity=Product.class, cascade=javax.persistence.CascadeType.ALL)
-	@JoinColumn(name="SKUCategory_ID", referencedColumnName="SKUCategory_ID")
-	List<Product> pInformtation;
+	@JoinColumn(name="skucategoryid", referencedColumnName="skucategoryid")
+	private List<Product> product= new ArrayList<>();
 	
-//	public ProductCategory(CategoryRequest PR){
-//		this.SKUCategory_Name=PR.getCategoryname();
-//		this.SKUCategory_Type=PR.getCategoryType();
-//	}
+	public Category(CategoryRequest PR){
+		this.skucategoryname=PR.getCategoryname();
+		this.skucategorytype=PR.getCategorytype();
+	}
 }
