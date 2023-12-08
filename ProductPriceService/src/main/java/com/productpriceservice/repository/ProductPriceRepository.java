@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.productpriceservice.model.ProducPrice;
+import com.productpriceservice.model.ProductPrice;
 
 @Repository
-public interface ProductPriceRepository extends JpaRepository<ProducPrice, Long> {
+public interface ProductPriceRepository extends JpaRepository<ProductPrice, Long> {
 	
-	List<ProducPrice> findByproductID(int id);
+	List<ProductPrice> findByproductID(int id);
 	
 	int deleteByproductID(int id);
 }

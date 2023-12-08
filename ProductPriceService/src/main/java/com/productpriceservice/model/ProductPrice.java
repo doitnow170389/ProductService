@@ -1,6 +1,5 @@
 package com.productpriceservice.model;
 
-import javax.annotation.processing.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +20,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProducPrice {
+public class ProductPrice {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
