@@ -14,6 +14,6 @@ public interface CategoryService {
 	
 	int processByID(int id);
 
-	Category processSKUCategory(Category pCategory, CategoryRequest cRequest, ProductService pService);
+	Category processSKUCategory(CategoryRequest cRequest, ProductService pService, CategoryService cService);
 	
 }

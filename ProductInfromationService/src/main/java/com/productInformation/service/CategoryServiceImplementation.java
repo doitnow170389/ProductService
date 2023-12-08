@@ -69,7 +69,8 @@ public class CategoryServiceImplementation implements CategoryService{
 	}
 
 	@Override
-	public Category processSKUCategory(Category pCategory, CategoryRequest cRequest, ProductService pService) {
+	public Category processSKUCategory(CategoryRequest cRequest, ProductService pService, CategoryService cService) {
+		Category pCategory = new Category(cRequest);
 		List<Product> productList=new ArrayList<Product>();
 		if(cRequest.getProductinformation()!=null)
 		{

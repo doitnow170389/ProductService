@@ -11,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.CascadeType;
-
 import com.productInformation.dto.CategoryRequest;
 
 import lombok.AllArgsConstructor;

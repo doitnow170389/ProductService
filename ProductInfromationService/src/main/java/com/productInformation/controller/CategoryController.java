@@ -1,12 +1,10 @@
 package com.productInformation.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,10 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.productInformation.dto.CategoryRequest;
 import com.productInformation.dto.CategoryResponse;
-import com.productInformation.dto.ProductRequest;
-import com.productInformation.dto.ProductResponse;
-import com.productInformation.model.Category;
-import com.productInformation.model.Product;
 import com.productInformation.service.CategoryService;
 import com.productInformation.service.ProductService;
 
@@ -33,9 +27,7 @@ public class CategoryController {
 
 	@PostMapping("/skucategory")
 	public CategoryResponse saveCategory(@RequestBody CategoryRequest cRequest) {
-		Category pCategory = new Category(cRequest);
-		pCategory = cService.processSKUCategory(pCategory, cRequest, pService);
-		return new CategoryResponse(pCategory);
+		return new CategoryResponse(cService.processSKUCategory(cRequest, pService,cService));
 	}
 
 	@GetMapping("/sku")
