@@ -40,7 +40,7 @@ public class ProductPriceServiceImplementation implements ProductPriceService{
 
 	@Override
 	public ProductPrice processwithDynamicId(ProductPrice pPrice, Long id) {
-//		pPrice.setId(id);
+		pPrice.setId(id);
 		return pRepo.save(pPrice);
 	}
 	
